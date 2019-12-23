@@ -6,7 +6,7 @@ This robot can autonomously map an environment and navigate to pickup and drop v
 
 It contains submodules of already existing ROS packages.
 
-*gmapping
-*turtlebot_teleop
-*turtlebot_rviz_launchers
-*turtlebot_gazebo
+* gmapping
+* turtlebot_teleop
+* turtlebot_rviz_launchers
+* turtlebot_gazebo
