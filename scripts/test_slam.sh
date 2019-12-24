@@ -2,7 +2,7 @@
 pkill -f ros
 pkill -f rviz
 pkill -f gazebo
-cd ~/catkin_ws2
+cd ~/catkin_ws
 source devel/setup.bash
 sleep 5
 xterm -T "Turtlebot" -e " roslaunch turtlebot_gazebo turtlebot_world.launch" &
