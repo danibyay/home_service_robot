@@ -6,16 +6,28 @@ This robot can autonomously map an environment and navigate to pickup and drop v
 
 It contains already existing ROS packages as submodules
 
-* gmapping
-* turtlebot_teleop
-* turtlebot_rviz_launchers
-* turtlebot_gazebo
+* [slam_gmapping](https://github.com/ros-perception/slam_gmapping)
+* [turtlebot](https://github.com/turtlebot/turtlebot)
+* [turtlebot_interactions](https://github.com/danibyay/turtlebot_interactions)
+* [turtlebot_simulator](https://github.com/danibyay/turtlebot_simulator)
 * [pick_objects](https://github.com/danibyay/pick_objects)
 * [add_markers](https://github.com/danibyay/add_markers)
 
 # Download
 
-`git clone --recursive https://github.com/danibyay/home_service_robot`
+Create a new catkin workspace
+
+`source /opt/ros/kinetic/setup.bash`
+
+`cd`
+
+`mkdir catkin_ws`
+
+`cd catkin_ws`
+
+Clone the home service project into a folder named src
+
+`git clone --recurse-submodules https://github.com/danibyay/home_service_robot src`
 
 # Usage
 
