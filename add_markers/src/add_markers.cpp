@@ -29,7 +29,7 @@ int main( int argc, char** argv )
     marker.action = visualization_msgs::Marker::ADD;
 
     // Set the pose of the marker.  This is a full 6DOF pose relative to the frame/time specified in the header
-    marker.pose.position.x = 0;
+    marker.pose.position.x = 1;
     marker.pose.position.y = 0;
     marker.pose.position.z = 0;
     marker.pose.orientation.x = 0.0;
@@ -38,8 +38,8 @@ int main( int argc, char** argv )
     marker.pose.orientation.w = 1.0;
 
     // Set the scale of the marker -- 1x1x1 here means 1m on a side
-    marker.scale.x = 1.0;
-    marker.scale.y = 1.0;
+    marker.scale.x = 0.2;
+    marker.scale.y = 0.2;
     marker.scale.z = 1.0;
 
     // Set the color -- be sure to set alpha to something non-zero!
@@ -61,9 +61,22 @@ int main( int argc, char** argv )
       sleep(1);
     }
     marker_pub.publish(marker);
-    ros::Duration(10.0).sleep();
-    //marker.color.a = 0;
-    //marker_pub.publish(marker);
+    ROS_INFO("publish at pick up location");
+    ros::Duration(5.0).sleep();
+
+    marker.action = visualization_msgs::Marker::DELETE;
+    marker_pub.publish(marker);
+    ROS_INFO("hiding marker");
+    ros::Duration(5.0).sleep();
+
+    marker.pose.position.x = -0.31;
+    marker.pose.position.y = -0.22;
+    marker.pose.orientation.z = 0.99;
+    marker.pose.orientation.w = 0.009;
+    marker.action = visualization_msgs::Marker::ADD;
+    marker_pub.publish(marker);
+    ROS_INFO("publish at drop off location");
+
     r.sleep();
 
 }
