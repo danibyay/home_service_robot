@@ -29,6 +29,16 @@ Clone the home service project into a folder named src
 
 `git clone --recurse-submodules https://github.com/danibyay/home_service_robot src`
 
+# Dependencies
+
+`rosdep -i install slam_gmapping`
+
+`rosdep -i install turtlebot_teleop`
+
+`rosdep -i install turtlebot_rviz_launchers`
+
+`rosdep -i install turtlebot_gazebo`
+
 # Usage
 
 `catkin_make`
